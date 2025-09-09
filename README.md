@@ -1,8 +1,6 @@
-# 🧾 Template.io – Template Management System
+# 🧾 Template Management System
 
-**Template.io** is a centralized Template Management System that streamlines the creation, management, and distribution of email and document templates with support for e-signatures, scheduling, and dynamic content.
-
----
+It is a centralized Template Management System that streamlines the creation, management, and distribution of email and document templates with support for e-signatures, scheduling, and dynamic content.
 
 ## ⚙️ Features
 
@@ -12,8 +10,6 @@
 - Bulk document generation via Excel/CSV
 - E-signature workflows
 - Email scheduling and inbox tracking
-
----
 
 ## 👤 User Roles
 
@@ -25,17 +21,6 @@
 | Signer        | Signs documents via secure email link                     |
 | Site Visitor  | Registers company request via homepage                    |
 
----
-
-## 📦 Tech Stack
-
-- **Frontend**: React / Vue / Angular (choose based on your stack)
-- **Backend**: Node.js (Express) / Django / Laravel
-- **Database**: PostgreSQL / MongoDB / MySQL
-- **Storage**: Cloudinary for template files
-
----
-
 ## 🚀 Getting Started
 
 ### Prerequisites
@@ -44,8 +29,9 @@
 - npm / yarn
 - MongoDB / PostgreSQL
 - Git
+- Docker & Docker Compose (optional, for containerized setup)
 
-### Installation
+### Installation (Without Docker)
 
 ```bash
 # Clone repo
@@ -53,10 +39,29 @@ git clone https://github.com/your-org/template-io.git
 cd template-io
 
 # Install backend dependencies
-cd backend
+cd template-back
 npm install
 
 # Install frontend dependencies
-cd ../frontend
+cd ../template-front
 npm install
+````
+
+### Running with Docker
+
+```bash
+# Build and start containers
+docker-compose up --build
+
+# To run in detached mode (background)
+docker-compose up -d
+
+# Stop containers
+docker-compose down
 ```
+
+> This will automatically build your backend and frontend images and run the application along with any required services defined in `docker-compose.yml`.
+
+### Notes
+
+* Make sure to configure environment variables in `.env` files for both frontend and backend.
